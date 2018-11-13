@@ -12,6 +12,7 @@ namespace progetto
         /// Punto di ingresso principale dell'applicazione.
         /// </summary>
         [STAThread]
+
         static void Main()
         {
             Application.EnableVisualStyles();

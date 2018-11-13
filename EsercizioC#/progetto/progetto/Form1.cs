@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +18,18 @@ namespace progetto
             InitializeComponent();
         }
 
+        public static FileStream GestioneDisco()
+        {
+            FileStream fileStream = new FileStream(
+            @"c:\words.txt", FileMode.OpenOrCreate,
+            FileAccess.ReadWrite, FileShare.None);
+
+            return fileStream;
+        }
+
         private void btnSalva_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnCarica_Click(object sender, EventArgs e)
