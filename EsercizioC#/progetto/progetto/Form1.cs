@@ -13,18 +13,47 @@ namespace progetto
 {
     public partial class Form1 : Form
     {
+        FileStream fileStream = new FileStream(
+            "numeri.txt", FileMode.OpenOrCreate,
+            FileAccess.ReadWrite, FileShare.None);
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        public static FileStream GestioneDisco()
+        public void SalvaSuFile(List<int> numeri)
         {
-            FileStream fileStream = new FileStream(
-            @"c:\words.txt", FileMode.OpenOrCreate,
-            FileAccess.ReadWrite, FileShare.None);
+            byte[] bdata = null;
+            String str = String.Empty;
 
-            return fileStream;
+            foreach (int i in numeri)
+            {
+                str = str + i.ToString() + ',';
+            }
+
+            bdata = Encoding.ASCII.GetBytes(str);
+
+            fileStream.Write(bdata, 0, bdata.Length);
+        }
+
+        public List<int> CaricaDaFile()
+        {
+            List<int> numeri = new List<int>();
+            String fileContent;
+            using (StreamReader reader = new StreamReader(fileStream))
+            {
+                fileContent = reader.ReadToEnd();
+                string[] str = fileContent.Split(',');
+
+                for(int i = 0; i < str.Length; i++)
+                {
+                    
+                    numeri.Add(Convert.ToInt32(i));
+                }
+            }   
+
+            return numeri;
         }
 
         private void btnSalva_Click(object sender, EventArgs e)

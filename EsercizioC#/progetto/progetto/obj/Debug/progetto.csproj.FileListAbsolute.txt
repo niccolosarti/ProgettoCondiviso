@@ -1,0 +1,10 @@
+C:\Users\Albi\Desktop\ProgetoCondiviso\ProgettoCondiviso\EsercizioC#\progetto\progetto\bin\Debug\progetto.exe.config
+C:\Users\Albi\Desktop\ProgetoCondiviso\ProgettoCondiviso\EsercizioC#\progetto\progetto\bin\Debug\progetto.exe
+C:\Users\Albi\Desktop\ProgetoCondiviso\ProgettoCondiviso\EsercizioC#\progetto\progetto\bin\Debug\progetto.pdb
+C:\Users\Albi\Desktop\ProgetoCondiviso\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.csprojAssemblyReference.cache
+C:\Users\Albi\Desktop\ProgetoCondiviso\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.Form1.resources
+C:\Users\Albi\Desktop\ProgetoCondiviso\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.Properties.Resources.resources
+C:\Users\Albi\Desktop\ProgetoCondiviso\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.csproj.GenerateResource.cache
+C:\Users\Albi\Desktop\ProgetoCondiviso\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.csproj.CoreCompileInputs.cache
+C:\Users\Albi\Desktop\ProgetoCondiviso\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.exe
+C:\Users\Albi\Desktop\ProgetoCondiviso\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.pdb
