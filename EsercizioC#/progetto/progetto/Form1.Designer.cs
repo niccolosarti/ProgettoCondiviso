@@ -31,16 +31,15 @@
             this.btnSalva = new System.Windows.Forms.Button();
             this.btnCarica = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.list = new System.Windows.Forms.ListView();
             this.txtB = new System.Windows.Forms.TextBox();
+            this.lstbx = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnSalva
             // 
-            this.btnSalva.Location = new System.Drawing.Point(161, 451);
-            this.btnSalva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSalva.Location = new System.Drawing.Point(107, 293);
             this.btnSalva.Name = "btnSalva";
-            this.btnSalva.Size = new System.Drawing.Size(159, 35);
+            this.btnSalva.Size = new System.Drawing.Size(106, 23);
             this.btnSalva.TabIndex = 0;
             this.btnSalva.Text = "Salva su file";
             this.btnSalva.UseVisualStyleBackColor = true;
@@ -48,10 +47,9 @@
             // 
             // btnCarica
             // 
-            this.btnCarica.Location = new System.Drawing.Point(393, 451);
-            this.btnCarica.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCarica.Location = new System.Drawing.Point(262, 293);
             this.btnCarica.Name = "btnCarica";
-            this.btnCarica.Size = new System.Drawing.Size(172, 35);
+            this.btnCarica.Size = new System.Drawing.Size(115, 23);
             this.btnCarica.TabIndex = 1;
             this.btnCarica.Text = "Carica da file";
             this.btnCarica.UseVisualStyleBackColor = true;
@@ -59,44 +57,39 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(668, 451);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdd.Location = new System.Drawing.Point(445, 293);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(128, 35);
+            this.btnAdd.Size = new System.Drawing.Size(85, 23);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Aggiungi";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // list
-            // 
-            this.list.Location = new System.Drawing.Point(140, 151);
-            this.list.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.list.Name = "list";
-            this.list.Size = new System.Drawing.Size(180, 147);
-            this.list.TabIndex = 3;
-            this.list.UseCompatibleStateImageBehavior = false;
-            this.list.SelectedIndexChanged += new System.EventHandler(this.list_SelectedIndexChanged);
-            // 
             // txtB
             // 
-            this.txtB.Location = new System.Drawing.Point(668, 151);
-            this.txtB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtB.Location = new System.Drawing.Point(445, 98);
             this.txtB.Name = "txtB";
-            this.txtB.Size = new System.Drawing.Size(148, 26);
+            this.txtB.Size = new System.Drawing.Size(100, 20);
             this.txtB.TabIndex = 4;
+            // 
+            // lstbx
+            // 
+            this.lstbx.FormattingEnabled = true;
+            this.lstbx.Location = new System.Drawing.Point(107, 98);
+            this.lstbx.Name = "lstbx";
+            this.lstbx.Size = new System.Drawing.Size(120, 95);
+            this.lstbx.TabIndex = 5;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lstbx);
             this.Controls.Add(this.txtB);
-            this.Controls.Add(this.list);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnCarica);
             this.Controls.Add(this.btnSalva);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -109,8 +102,8 @@
         private System.Windows.Forms.Button btnSalva;
         private System.Windows.Forms.Button btnCarica;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ListView list;
         private System.Windows.Forms.TextBox txtB;
+        private System.Windows.Forms.ListBox lstbx;
     }
 }
 

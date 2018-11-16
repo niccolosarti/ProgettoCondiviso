@@ -14,6 +14,7 @@ namespace progetto
     public partial class Form1 : Form
     {
         List<int> numeri = new List<int>();
+
         FileStream fileStream = new FileStream(
             "numeri.txt", FileMode.OpenOrCreate,
             FileAccess.ReadWrite, FileShare.None);
@@ -23,11 +24,10 @@ namespace progetto
             InitializeComponent();
         }
 
-        private void add()
+        public void add()
         {
             numeri.Add(Convert.ToInt32(txtB.Text));
         }
-
 
         public void SalvaSuFile(List<int> numeri)
         {
@@ -63,22 +63,37 @@ namespace progetto
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
-            
+            if (lstbx.Items.Count == 0)
+            {
+                MessageBox.Show("Impossibile salvare poichè la lista è vuota.");
+            }
+            else
+            {
+                SalvaSuFile(numeri.ToList<int>());
+            }
         }
 
         private void btnCarica_Click(object sender, EventArgs e)
-        {
-
+        { 
+            numeri = CaricaDaFile().ToList<int>();
+            numeri.Sort();
+            lstbx.DataSource = numeri;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void list_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            if(txtB.Text != "")
+            {
+                add();
+                numeri.Sort();
+                lstbx.DataSource = null;
+                lstbx.DataSource = numeri;
+                txtB.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Impossibile aggiungere poichè non è stato inserito alcun elemento.");
+            }
         }
     }
 }
