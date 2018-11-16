@@ -13,6 +13,7 @@ namespace progetto
 {
     public partial class Form1 : Form
     {
+        List<int> numeri = new List<int>();
         FileStream fileStream = new FileStream(
             "numeri.txt", FileMode.OpenOrCreate,
             FileAccess.ReadWrite, FileShare.None);
@@ -21,6 +22,12 @@ namespace progetto
         {
             InitializeComponent();
         }
+
+        private void add()
+        {
+            numeri.Add(Convert.ToInt32(txtB.Text));
+        }
+
 
         public void SalvaSuFile(List<int> numeri)
         {
@@ -48,11 +55,9 @@ namespace progetto
 
                 for(int i = 0; i < str.Length; i++)
                 {
-                    
                     numeri.Add(Convert.ToInt32(i));
                 }
-            }   
-
+            }
             return numeri;
         }
 
