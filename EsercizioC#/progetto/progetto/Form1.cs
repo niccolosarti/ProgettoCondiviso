@@ -15,10 +15,6 @@ namespace progetto
     {
         List<int> numeri = new List<int>();
 
-        FileStream fileStream = new FileStream(
-            "numeri.txt", FileMode.OpenOrCreate,
-            FileAccess.ReadWrite, FileShare.None);
-
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +27,10 @@ namespace progetto
 
         public void SalvaSuFile(List<int> numeri)
         {
+            FileStream fileStream = new FileStream(
+            "numeri.txt", FileMode.OpenOrCreate,
+            FileAccess.ReadWrite, FileShare.None);
+
             byte[] bdata = null;
             String str = String.Empty;
 
@@ -42,23 +42,36 @@ namespace progetto
             bdata = Encoding.ASCII.GetBytes(str);
 
             fileStream.Write(bdata, 0, bdata.Length);
+
+            fileStream.Close();
         }
 
         public List<int> CaricaDaFile()
         {
-            List<int> numeri = new List<int>();
-            String fileContent;
+            FileStream fileStream = new FileStream(
+            "numeri.txt", FileMode.OpenOrCreate,
+            FileAccess.ReadWrite, FileShare.None);
+
+            List<int> n = new List<int>();
+            string fileContent;
             using (StreamReader reader = new StreamReader(fileStream))
             {
                 fileContent = reader.ReadToEnd();
-                string[] str = fileContent.Split(',');
-
-                for(int i = 0; i < str.Length; i++)
-                {
-                    numeri.Add(Convert.ToInt32(i));
-                }
             }
-            return numeri;
+            
+            List<string> tokens = fileContent.Split(',').ToList();
+
+            tokens.RemoveAll(str => string.IsNullOrEmpty(str));
+
+            foreach (string s in tokens)
+            {
+                n.Add(Convert.ToInt32(s));
+                
+            }
+
+            fileStream.Close();
+
+            return n;
         }
 
         private void btnSalva_Click(object sender, EventArgs e)
@@ -74,8 +87,8 @@ namespace progetto
         }
 
         private void btnCarica_Click(object sender, EventArgs e)
-        { 
-            numeri = CaricaDaFile().ToList<int>();
+        {   
+            numeri = CaricaDaFile();
             numeri.Sort();
             lstbx.DataSource = numeri;
         }
@@ -94,6 +107,11 @@ namespace progetto
             {
                 MessageBox.Show("Impossibile aggiungere poichè non è stato inserito alcun elemento.");
             }
+        }
+
+        private void lstbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -79,6 +79,7 @@
             this.lstbx.Name = "lstbx";
             this.lstbx.Size = new System.Drawing.Size(120, 95);
             this.lstbx.TabIndex = 5;
+            this.lstbx.SelectedIndexChanged += new System.EventHandler(this.lstbx_SelectedIndexChanged);
             // 
             // Form1
             // 
