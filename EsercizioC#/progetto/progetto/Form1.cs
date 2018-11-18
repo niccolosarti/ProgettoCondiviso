@@ -20,9 +20,22 @@ namespace progetto
             InitializeComponent();
         }
 
+
+        // La funzione add() controlla se i numeri nella lista sono minori di dieci 
+        // e li aggiunge nella listbox prendendoli dalla textbox
+        // altrimenti disabilita il bottone btnAdd.
         public void add()
         {
-            numeri.Add(Convert.ToInt32(txtB.Text));
+            try
+            {
+                if (numeri.Count() < 10)
+                    numeri.Add(Convert.ToInt32(txtB.Text));
+                else
+                    btnAdd.Enabled = false;
+            }
+            catch (FormatException e) {
+                MessageBox.Show("inserire un numero valido");
+            }
         }
 
         public void SalvaSuFile(List<int> numeri)
@@ -112,6 +125,13 @@ namespace progetto
         private void lstbx_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        // La funzione btnClear_Click() svuota la listbox eliminando tutti i numeri e la lista numeri pure viene svuotata.
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            lstbx.DataSource = null;
+            numeri.Clear();
         }
     }
 }
