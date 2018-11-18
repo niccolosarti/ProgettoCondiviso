@@ -133,5 +133,15 @@ namespace progetto
             lstbx.DataSource = null;
             numeri.Clear();
         }
+
+        private void btnRemovedSelected_Click(object sender, EventArgs e)
+        {
+            foreach (int i in lstbx.SelectedItems.OfType<int>().ToList())
+            {
+                numeri.RemoveAll(n => n == i);
+                lstbx.DataSource = null;
+                lstbx.DataSource = numeri;
+            }
+        }
     }
 }
